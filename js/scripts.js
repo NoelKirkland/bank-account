@@ -1,3 +1,4 @@
+//Business logic
 function BankAccount(name, balance){
   this.name = name,
   this.balance = balance
@@ -15,6 +16,8 @@ BankAccount.prototype.removeMoney = function(value){
   }
 }
 
+
+//UI logic
 function showBalance(){
   $("#output").text(bankAccount.balance);
 }
@@ -38,25 +41,30 @@ $(document).ready(function(){
     event.preventDefault();
     removeErrors();
     if ($("input#name").val().length > 0 && $("input#initial-deposit").val().length > 0) {
-      inputName = $("input#name").val();
-      inputDeposit = parseInt($("input#initial-deposit").val());
-      $("input#name").val("");
-      $("input#initial-deposit").val("")
-      bankAccount = new BankAccount(inputName, inputDeposit);
+      let nameInput = $("input#name");
+      let initialDepositInput = $("input#initial-deposit");
+      inputtedName = nameInput.val();
+      inputtedDeposit = parseInt(initialDepositInput.val());
+      nameInput.val("");
+      initialDepositInput.val("")
+      bankAccount = new BankAccount(inputtedName, inputtedDeposit);
       showBalance();
+      $("#output").show();
       enableDepositWithdraw();
     } else {
       registrationError();
     }
     $("#deposit").click(function (){
-      let depositAmount = parseInt($("#dollar-amount").val());
-      $("#dollar-amount").val("")
+      let dollarAmountInput = $("#dollar-amount");
+      let depositAmount = parseInt(dollarAmountInput.val());
+      $(dollarAmountInput).val("")
       bankAccount.addMoney(depositAmount);
       showBalance();
     });
     $("#withdraw").click(function (){
-      let withdrawAmount = parseInt($("#dollar-amount").val());
-      $("#dollar-amount").val("")
+      let dollarAmountInput = $("#dollar-amount");
+      let withdrawAmount = parseInt(dollarAmountInput.val());
+      dollarAmountInput.val("")
       bankAccount.removeMoney(withdrawAmount);
       showBalance();
     });

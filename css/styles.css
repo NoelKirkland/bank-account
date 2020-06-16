@@ -1,0 +1,11 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+section + section {
+  margin-top:20px;
+}
+
+#output {
+  display : none;
+}

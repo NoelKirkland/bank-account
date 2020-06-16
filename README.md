@@ -1,15 +1,21 @@
-# Project Name
+# Bank Account
 **for Epicodus**
 **By Peter Grimm, 05.29.2020**
 
 ## Description
 
-Insert description here
+Bank Account page created as an exercise to practice objects, constructors, prototypes, inheritance.
+
+## Specifications
+| Behavior | Input | Output |
+|----------|-------|--------|
+|Users register account with name and initial deposit|name, deposit|current balance|
+|Users can add or withdraw money from created account|deposit or withdraw amount|current balance|
 
 ## Setup/Installation Requirements
 
 * Clone this repository 
-* Browse to the ` ` folder
+* Browse to the `bank-account` folder
 * Open `index.html` in a browser of your choice
 
 ## Technologies Used
